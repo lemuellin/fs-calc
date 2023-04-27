@@ -1,0 +1,74 @@
+*, *::after, *::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+.header{
+    font-size: 3rem;
+    text-align: center;
+    padding: 1.5rem;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.container{
+    width: 600px;
+    display: grid;
+    grid-template-columns: 0.8fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    row-gap: 15px;
+    column-gap: 10px;
+}
+
+/* INPUT ITEMS and UNITS */
+.item1{
+    padding-right: 53px; 
+    text-align: right;
+}
+
+.span1{
+    margin-left: -53px;
+}
+
+.sub-container{
+    grid-column: 2 / 4;
+}
+
+.item2{
+    width: 415px;
+    padding-right: 60px; 
+    text-align: right;
+    justify-self: stretch;
+    align-self: stretch;
+}
+
+.span2{
+    margin-left: -60px;
+}
+
+.titleText{
+    font-size: 1.2rem;
+}
+
+.unit{
+    text-align: center;
+}
+
+input{
+    height: 1.5rem;
+}
+
+button{
+    height: 2rem;
+    width: 20rem;
+    font-weight: bolder;
+    cursor: pointer;
+}
