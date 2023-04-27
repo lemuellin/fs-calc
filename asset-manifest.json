@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/fs-calc/static/css/main.86056c57.css",
+    "main.js": "/fs-calc/static/js/main.e5068b93.js",
+    "index.html": "/fs-calc/index.html",
+    "main.86056c57.css.map": "/fs-calc/static/css/main.86056c57.css.map",
+    "main.e5068b93.js.map": "/fs-calc/static/js/main.e5068b93.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.86056c57.css",
+    "static/js/main.e5068b93.js"
+  ]
+}
