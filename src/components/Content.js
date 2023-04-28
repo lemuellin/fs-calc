@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import DataInput from "./DataInput";
 import '../styles/styles.css';
 
@@ -18,53 +18,85 @@ const Content = () => {
         switch(input.name){
             case 'diaInch':
                 setDiaInch(input.value);
-                setDiaMetric((Number(input.value) * 25.4).toFixed(2));
+                setDiaMetric((input.value * 25.4).toFixed(2));
                 return;
             case 'diaMetric':
                 setDiaMetric(input.value);
-                setDiaInch((Number(input.value) / 25.4).toFixed(4));
+                setDiaInch((input.value / 25.4).toFixed(4));
                 return;
             case 'CLInch':
                 setCLInch(input.value);
-                setCLMetric((Number(input.value) * 25.4 / 1000).toFixed(3));
+                setCLMetric((input.value * 25.4).toFixed(0));
                 return;
             case 'CLMetric':
                 setCLMetric(input.value);
-                setCLInch((Number(input.value) / 25.4).toFixed(2));
+                setCLInch((input.value / 25.4).toFixed(2));
                 return;
             case 'CSInch':
                 setCSInch(input.value);
-                setCSMetric((Number(input.value) * 0.3048).toFixed(2));
+                setCSMetric((input.value * 0.3048).toFixed(0));
                 return;
             case 'CSMetric':
                 setCSMetric(input.value);
-                setCSInch((Number(input.value) / 0.3048).toFixed(2));
+                setCSInch((input.value / 0.3048).toFixed(1));
                 return;
             case 'FRInch':
                 setFRInch(input.value);
-                setFRMetric((Number(input.value) * 0.0254).toFixed(2));
+                setFRMetric((input.value * 0.0254).toFixed(1));
                 return;
             case 'FRMetric':
                 setFRMetric(input.value);
-                setFRInch((Number(input.value) / 0.0254).toFixed(2));
+                setFRInch((input.value / 0.0254).toFixed(0));
                 return;
             case 'SS':
-                setSS(input.value);
+                setSS((Number(input.value)).toFixed(0));
                 return;
             default:
                 console.log('input err');
         }
     }
 
-    const handleClick = () => {
+    const handleCalcBtnClick1 = () => {
+        const tempSS = (12 * CSInch / 1000 / Math.PI / diaInch).toFixed(0);
+        setSS(tempSS);
+        setFRInch((CLInch * tempSS).toFixed(0));
+        setFRMetric((CLMetric * tempSS / 1000).toFixed(1));
+    }
+
+    const handleCalcBtnClick2 = () => {
+        setCLInch((FRInch / SS).toFixed(2));
+        setCLMetric((FRInch / SS * 25.4).toFixed(0));
+        setCSInch((diaInch * Math.PI * SS * 1000 / 12).toFixed(1));
+        setCSMetric((diaInch * Math.PI * SS * 1000 / 12 * 0.3048).toFixed(0));
+    }
+
+    const handleResetBtnClick = () => {
         window.location.reload();
     }
 
+    const handleKeyPress = (e) => {
+        if(e.code === 'Space'){
+            window.location.reload();
+        }
+        if(e.code === 'KeyB'){
+            handleCalcBtnClick1();
+        }
+        if(e.code === 'KeyN'){
+            handleCalcBtnClick2();
+        }
+    }
+
+    useEffect(() => {
+        window.addEventListener('keydown', handleKeyPress);
+        return () => window.removeEventListener('keydown', handleKeyPress);
+    });
 
     return(
         <div className="content">
             <DataInput
                 onDataInputChange={handleChange}
+                onBtnClick1={handleCalcBtnClick1}
+                onBtnClick2={handleCalcBtnClick2}
                 diaInch={diaInch}
                 diaMetric={diaMetric}
                 CLInch={CLInch}
@@ -75,7 +107,7 @@ const Content = () => {
                 FRMetric={FRMetric}
                 SS={SS}
             />
-            <button onClick={handleClick}>Reset</button>
+            <button className="resetBtn" onClick={handleResetBtnClick}>Reset</button>
         </div>
     );
 }

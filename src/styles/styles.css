@@ -19,11 +19,27 @@
     gap: 30px;
 }
 
-.container{
+.section{
+    display: flex;
+    gap: 10px;
+}
+
+.container1{
     width: 600px;
     display: grid;
     grid-template-columns: 0.8fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    row-gap: 15px;
+    column-gap: 10px;
+    margin-bottom: 20px;
+}
+
+.container2{
+    margin-top: 20px;
+    width: 600px;
+    display: grid;
+    grid-template-columns: 0.8fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
     row-gap: 15px;
     column-gap: 10px;
 }
@@ -66,9 +82,24 @@ input{
     height: 1.5rem;
 }
 
-button{
+.calcBtn1{
+    width: 3rem;
+    cursor: pointer;
+    font-weight: bolder;
+    margin-top: 37px;
+    margin-bottom: 20px;
+}
+
+.calcBtn2{
+    width: 3rem;
+    cursor: pointer;
+    font-weight: bolder;
+    margin-top: 20px;
+}
+
+.resetBtn{
     height: 2rem;
-    width: 20rem;
+    width: 658px;
     font-weight: bolder;
     cursor: pointer;
 }
