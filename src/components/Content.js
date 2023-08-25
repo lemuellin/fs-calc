@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import DataInput from "./DataInput";
-import Contact from "./Contact";
+// import Contact from "./Contact";
 import '../styles/styles.css';
 
 
@@ -109,7 +109,7 @@ const Content = () => {
                 SS={SS}
             />
             <button className="resetBtn" onClick={handleResetBtnClick}>Reset</button>
-            <Contact/>
+            {/* <Contact/> */}
         </div>
     );
 }
