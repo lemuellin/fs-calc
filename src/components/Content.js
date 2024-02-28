@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import DataInput from "./DataInput";
-// import Contact from "./Contact";
 import '../styles/styles.css';
 
 
@@ -79,12 +78,6 @@ const Content = () => {
         if(e.code === 'Space'){
             window.location.reload();
         }
-        if(e.code === 'KeyB'){
-            handleCalcBtnClick1();
-        }
-        if(e.code === 'KeyN'){
-            handleCalcBtnClick2();
-        }
     }
 
     useEffect(() => {
@@ -109,7 +102,6 @@ const Content = () => {
                 SS={SS}
             />
             <button className="resetBtn" onClick={handleResetBtnClick}>Reset</button>
-            {/* <Contact/> */}
         </div>
     );
 }
