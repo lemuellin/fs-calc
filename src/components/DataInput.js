@@ -89,35 +89,39 @@ const DataInput = (props) => {
                     <div className="titleText unit">Inch</div>
                     <div className="titleText unit">Metric</div>
 
-                    <div className="titleText">Diameter: </div>
+                    <div className="small-screen-label titleText">Dia.</div>
+                    <div className="large-screen-label titleText">Diameter: </div>
+                    
                     <div>
-                        <input autoFocus ref={inputRef1} className="item1" name="diaInch" type='number' value={props.diaInch} onChange={handleChange}/>
+                        <input inputmode="decimal" autoFocus ref={inputRef1} className="item1" name="diaInch" type='number' value={props.diaInch} onChange={handleChange}/>
                         <span className="span1">in</span>
                     </div>
                     <div>
-                        <input ref={inputRef4} className="item1" name="diaMetric" type='number' value={props.diaMetric} onChange={handleChange}/>
+                        <input inputmode="decimal" ref={inputRef4} className="item1" name="diaMetric" type='number' value={props.diaMetric} onChange={handleChange}/>
                         <span className="span1">mm</span>
                     </div>
                     
 
-                    <div className="titleText">Chipload: </div>
+                    <div className="small-screen-label titleText">CL.</div>
+                    <div className="large-screen-label titleText">Chipload: </div>
                     <div>
-                        <input ref={inputRef2} className="item1" name="CLInch" type='number' value={props.CLInch} onChange={handleChange}/>
+                        <input inputmode="decimal" ref={inputRef2} className="item1" name="CLInch" type='number' value={props.CLInch} onChange={handleChange}/>
                         <span className="span1">mil/rev</span>
                     </div>
                     <div>
-                        <input ref={inputRef5} className="item1" name="CLMetric" type='number' value={props.CLMetric} onChange={handleChange}/>
+                        <input inputmode="decimal" ref={inputRef5} className="item1" name="CLMetric" type='number' value={props.CLMetric} onChange={handleChange}/>
                         <span className="span1">um/rev</span>
                     </div>
                     
 
-                    <div className="titleText">Cutting Speed: </div>
+                    <div className="small-screen-label titleText">CS.</div>
+                    <div className="large-screen-label titleText">Cutting Speed: </div>
                     <div>
-                        <input ref={inputRef3} className="item1" name="CSInch" type='number' value={props.CSInch} onChange={handleChange}/>
+                        <input inputmode="decimal" ref={inputRef3} className="item1" name="CSInch" type='number' value={props.CSInch} onChange={handleChange}/>
                         <span className="span1">ft/min</span>
                     </div>
                     <div>
-                        <input ref={inputRef6} className="item1" name="CSMetric" type='number' value={props.CSMetric} onChange={handleChange}/>
+                        <input inputmode="decimal" ref={inputRef6} className="item1" name="CSMetric" type='number' value={props.CSMetric} onChange={handleChange}/>
                         <span className="span1">m/min</span>
                     </div>
                 </form>
@@ -128,20 +132,22 @@ const DataInput = (props) => {
 
             <div className="section">
                 <form className="container2">
-                    <div className="titleText">Feed Rate: </div>
+                    <div className="small-screen-label titleText">FR.</div>
+                    <div className="large-screen-label titleText">Feed Rate: </div>
                     <div>
-                        <input ref={inputRef8} className="item1" name="FRInch" type='number' value={props.FRInch} onChange={handleChange}/>
+                        <input inputmode="decimal" ref={inputRef8} className="item1" name="FRInch" type='number' value={props.FRInch} onChange={handleChange}/>
                         <span className="span1">IPM</span>
                     </div>
                     <div>
-                        <input ref={inputRef10} className="item1" name="FRMetric" type='number' value={props.FRMetric} onChange={handleChange}/>
+                        <input inputmode="decimal" ref={inputRef10} className="item1" name="FRMetric" type='number' value={props.FRMetric} onChange={handleChange}/>
                         <span className="span1">m/min</span>
                     </div>
                     
 
-                    <div className="titleText">Spindle Speed: </div>
+                    <div className="small-screen-label titleText">SS.</div>
+                    <div className="large-screen-label titleText">Spindle Speed: </div>
                     <div className="sub-container">
-                        <input ref={inputRef9} className="item2" name="SS" type='number' value={props.SS} onChange={handleChange}/>
+                        <input inputmode="decimal" ref={inputRef9} className="item2" name="SS" type='number' value={props.SS} onChange={handleChange}/>
                         <span className="span2">K-RPM</span>
                     </div>
                 </form>

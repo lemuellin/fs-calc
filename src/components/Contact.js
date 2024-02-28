@@ -14,15 +14,14 @@ const Contact = () => {
                 </div>
                 <div className='contactInfo'>
                     <div className='contactUsTitle'>Contact Us</div>
-                    <div>Phone: (714) 644-9700</div>
+                    <div className="small-screen-label">(714) 644-9700</div>
+                    <div className="large-screen-label">Phone: (714) 644-9700</div>
                     <a href="mailto:drillsupport@tctcircuitsupply.com" target="_blank">
-                        <div>Email: drillsupport@tctcircuitsupply.com</div>
+                        <div className="small-screen-label">drillsupport@tctcircuitsupply.com</div>
+                        <div className="large-screen-label">Email: drillsupport@tctcircuitsupply.com</div>
                     </a>
                 </div>
             </div>
-            
-
-            
         </div>
     );
 }

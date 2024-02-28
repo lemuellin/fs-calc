@@ -17,7 +17,6 @@
     font-size: 2.2rem;
     text-align: center;
     padding: 1.5rem;
-    padding-left: 1rem;
 }
 
 .logoContainer{
@@ -166,6 +165,87 @@ input{
     height: 8rem;            /* Footer height */
 }
 
-@media (max-width: 540px){
-    
+@media (max-width: 540px) {
+    #page-container {
+        position: relative;
+        min-height: 100dvh;
+    }
+
+    .header{
+        min-width: 0px;
+    }
+
+    .small-screen-label {
+      display: block;
+    }
+  
+    .large-screen-label {
+      display: none;
+    }
+
+    .container1{
+        width: 300px;
+        display: grid;
+        grid-template-columns: 0.2fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        row-gap: 15px;
+        column-gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    .container2{
+        margin-top: 20px;
+        width: 300px;
+        display: grid;
+        grid-template-columns: 0.2fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        row-gap: 15px;
+        column-gap: 10px;
+    }
+
+    .content{
+        min-width: 370px;
+    }
+
+    .resetBtn{
+        height: 2rem;
+        width: 300px;
+        font-weight: bolder;
+        cursor: pointer;
+    }
+
+    .footer{
+        min-width: 370px;
+    }
+
+    .logoContainer{
+        width: 100px;
+    }
+
+    .item1, .item2{
+        font-size: 1rem;
+    }
+}
+  
+@media (min-width: 541px) {
+    .small-screen-label {
+      display: none;
+    }
+  
+    .large-screen-label {
+      display: block;
+    }
+}
+button {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: 1px solid rgb(150, 149, 149);
+    border-radius: 5px;
+    padding: 0;
+    margin: 0;
+    background: rgb(223, 223, 223);
+    cursor: pointer;
+    outline: none;
+    color: black;
 }
